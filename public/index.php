@@ -1,10 +1,19 @@
 <?php
 session_start();
 
+use App\controller\UserController;
 use App\model\AutoloaderModel;
 use App\model\DatabaseModel;
 
 require '../model/AutoloaderModel.php';
+
+require '../controller/UserController.php';
+
+require '../view/registerFormView.php';
+
+require '../view/loginFormView.php';
+
+require '../view/homeView.php';
 
 AutoloaderModel::register();
 
@@ -14,15 +23,17 @@ $database = new DatabaseModel();
 
 $db = $database->pdo;
 
-try {
-    $statement = $db->prepare("show tables;");
-    $statement->execute();
-    $res = $statement->fetch();
-} catch (\Exception $e) {
-    die("erreur : " . $e->getMessage());
-}
+$user_controller = new UserController();
 
-var_dump($res);
+$user_controller->validateData();
+
+// try {
+//     $statement = $db->prepare("show tables;");
+//     $statement->execute();
+//     $res = $statement->fetch();
+// } catch (\Exception $e) {
+//     die("erreur : " . $e->getMessage());
+// }
+
+// var_dump($res);
 ?>
-
-<p>Hello World !</p>

@@ -108,7 +108,47 @@ img{
     width: 100%;
     display: flex;
     margin:auto;
-    padding: 40px;
+    padding:  40px auto;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.main-container_div-logo_h1-slogan{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: aliceblue;
+    letter-spacing: 3px;
+    word-spacing: 4px;
+    font-weight: 600;
+}
+
+.btn--green-filled{
+    background-color: #39b900;
+    width: 350px;
+    margin:10px auto;
+    font-size: large;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.main-container_form_div-first-part{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container_div-bot_img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.main-container_div-bot{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
 }

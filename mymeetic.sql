@@ -33,27 +33,18 @@ CREATE TABLE user(
     birthdate DATETIME NOT NULL,
     email varchar(255) NOT NULL,
     pass varchar(255) NOT NULL,
-    id_profil int not null,
-    PRIMARY KEY (id)
-);
-
-create table profil(
-    id int AUTO_INCREMENT not null ,
     id_city int not null,
     id_genre int not null,
     id_role int not null,
-    id_session int,
-    id_cookie int,
-    id_statu int not null,
-    id_hobbie int,
-    id_movie int,
-    id_sport int,
-    id_smoke int,
-    id_profil_image int not null,
+    id_session int null default null,
+    id_cookie int null default null,
+    id_statu int null default null,
+    id_movie int null default null,
+    id_sport int null default null,
+    id_smoke int null default null,
+    id_profil_image int null default null,
     PRIMARY KEY (id)
 );
-
-alter table user add foreign key (id_profil) references profil(id);
 
 create table profil_image (
     id int AUTO_INCREMENT not null ,
@@ -79,6 +70,11 @@ create table city (
     name varchar(64) not null,
     primary key (id)
 );
+
+insert into
+    city(name)
+values
+    ("Paris");
 
 create table sess (
     id int AUTO_INCREMENT not null,
@@ -261,14 +257,26 @@ values
     ("Essaye d'arrêter");
 
 
-alter table profil add foreign key (id_city) REFERENCES city(id),
+create table user_hobbie (
+    id_user int default null,
+    id_hobbie int default null
+);
+
+alter table user_hobbie add foreign key (id_hobbie) REFERENCES hobbie(id);
+alter table user_hobbie add foreign key (id_user) REFERENCES user(id);
+
+alter table user add foreign key (id_city) REFERENCES city(id),
     add FOREIGN KEY (id_genre) REFERENCES genre(id),
     add FOREIGN KEY (id_role) REFERENCES rol(id),
     add FOREIGN KEY (id_session) REFERENCES sess(id),
     add FOREIGN KEY (id_cookie) REFERENCES cookie(id),
     add FOREIGN KEY (id_statu) REFERENCES statu(id),
-    add FOREIGN KEY (id_hobbie) REFERENCES hobbie(id),
     add FOREIGN KEY (id_movie) REFERENCES movie(id),
     add FOREIGN KEY (id_sport) REFERENCES sport(id),
     add FOREIGN KEY (id_smoke) REFERENCES smoke(id),
     add FOREIGN KEY (id_profil_image) REFERENCES profil_image(id);
+
+alter table user modify id_profil_image int null;
+
+alter table user modify id_statu int null;
+ 

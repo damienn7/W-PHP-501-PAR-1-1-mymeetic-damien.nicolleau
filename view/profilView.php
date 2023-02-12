@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My meetic - Accueil</title>
+    <title>My meetic - Mon profil</title>
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -29,10 +29,10 @@
                     <li class="header-container_nav-container_dropdown_ul_li">
                         <form action="../public/index.php" method="POST"
                             class="header-container_nav-container_dropdown_ul_li_form">
-                            <button class="btn--dropdown" name="see-profil" value="see-profil">
+                            <button class="btn--dropdown" name="see-home" value="see-profil">
                                 <span class="material-symbols-outlined">
-                                    person
-                                </span><span class="text">Mon compte</span>
+                                    home
+                                </span><span class="text">Accueil</span>
                             </button>
                             <button class="btn--dropdown" name="logout" value="logout">
                                 <span class="material-symbols-outlined">
@@ -50,7 +50,6 @@
     </main>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="../public/js/request_profiles.js"></script>
     <script src="../public/js/script.js"></script>
 </body>
 

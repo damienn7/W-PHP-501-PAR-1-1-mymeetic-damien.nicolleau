@@ -23,7 +23,7 @@ class DatabaseModel{
         $pdo = new \PDO("mysql:dbname=".self::getDbName().";host=".self::getDbHost(),self::getDbUser(),self::getDbPass());
         $pdo->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
         $this->pdo = $pdo;
-        return $pdo;
+        return $this->pdo;
     }
 
     private function getDbName(){

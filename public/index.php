@@ -60,10 +60,10 @@ if (!isset($_SESSION["LOGGED_USER"])) {
         header('Location: ../view/homeView.php');
     }
     
-    if (isset($_GET["get"]) && $_GET["get"] == "all"||isset($_POST["city"])) {
+    if (isset($_GET["get"]) && $_GET["get"] == "all"||isset($_GET["city"])) {
         $user_controller_get = new UserController();
 
-        if (isset($_POST["city"])) {
+        if (isset($_GET["city"])) {
             // echo $_POST["city"];
             // die();
             // require_once '../view/homeView.php';
@@ -71,25 +71,29 @@ if (!isset($_SESSION["LOGGED_USER"])) {
             $city="Paris";
             $min=18;
             $max=60;
-            if (isset($_POST["city"])){
-                $city = $_POST["city"];
+            if (isset($_GET["city"])){
+                $city = $_GET["city"];
             }
 
-            if(isset($_POST["age-min"])){
-                $min=$_POST["age-min"];
+            if(isset($_GET["age-min"])){
+                $min=$_GET["age-min"];
             }
 
-            if (isset($_POST["age-max"])) {
-                $max = $_POST["age-max"];
+            if (isset($_GET["age-max"])) {
+                $max = $_GET["age-max"];
             }
+            
+
+            require_once('../view/header.php');
 
             // if (isset($_POST["city"]) || isset($_POST["age-min"]) || isset($_POST["age-max"]) || isset($_POST)) {
-                $user_controller_get->getAllProfiles($city, $min, $max, $_POST);
+                $user_controller_get->getAllProfiles($city, $min, $max, $_GET);
 
-                
+            require_once('../view/footer.php');
 
             // }
         } else {
+            // require '../view/homeView.php';
             $user_controller_get->getAllProfiles();
         }
     }

@@ -74,6 +74,10 @@ class UserController
         }
     }
 
+    public function isAjax(){
+        return isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && $_SERVER["HTTP_X_REQUESTED_WITH"]=="XMLHttpRequest";
+    }
+
     public function getAllProfiles($city = "Paris", $min = 18, $max = 60, $post = "")
     {
         // var_dump($log);
@@ -103,7 +107,7 @@ class UserController
             
             ?>
             <div class="main-container-home_div-filtre">
-                <form action="../public/index.php" class="main-container-home_div-filtre_user-filter-form" id="form-filter" method="POST">
+                <form action="../public/index.php" class="main-container-home_div-filtre_user-filter-form" id="form-filter" method="GET">
                     <div class="field">
                         <label for="city" class="city">Ville</label>
                         <input type="text" name="city" id="city" placeholder="Ville recherchee..." value="Paris">

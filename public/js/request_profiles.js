@@ -11,7 +11,7 @@
 
     $("#form-filter").on("submit", function (e) {
         e.preventDefault();
-        $.ajax($("#form-filter").attr("action"), $("#form-filter").serializeArray(),{type:'POST'})
+        $.ajax("http://localhost:8080/public/index.php", { type: 'GET' })
             .done(function (data, text, jqxhr) {
                 $("main").append($(jqxhr.responseText));
                 alert(jqxhr.responseText);
@@ -23,7 +23,7 @@
             });
 
     });
-        })(jQuery);
+})(jQuery);
 
 
 

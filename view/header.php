@@ -6,43 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My meetic - Accueil</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/output.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
-<body>
-    <header class="header-container-home">
-        <nav class="header-container_nav-container">
-            <img src="https://iliusstu-a.akamaihd.net/www.meetic.fr/hpv/positive-75570a615a9.svg"
-                class="header-container_nav-container_logo" alt="meetic logo">
-            <ul class="header-container_nav-container_ul">
-                <li class="header-container_nav-container_ul_li">Rechercher</li>
-                <li class="header-container_nav-container_ul_li">Like</li>
-            </ul>
-
-            <img src="../avatar.jpg" class="header-container_nav-container_dropdown_img-top" alt="avatar picture">
-            <div class="header-container_nav-container_dropdown">
-                <ul class="header-container_nav-container_dropdown_ul">
-                    <img src="../avatar.jpg" class="header-container_nav-container_dropdown_img-bottom"
-                        alt="avatar picture">
-                    <li class="header-container_nav-container_dropdown_ul_li">
-                        <form action="../public/index.php" method="POST"
-                            class="header-container_nav-container_dropdown_ul_li_form">
-                            <button class="btn--dropdown" name="see-profil" value="see-profil">
-                                <span class="material-symbols-outlined">
-                                    person
-                                </span><span class="text">Mon compte</span>
-                            </button>
-                            <button class="btn--dropdown" name="logout" value="logout">
-                                <span class="material-symbols-outlined">
-                                    logout
-                                </span> <span class="text">Se deconnecter</span>
-                            </button>
-                        </form>
-                    </li>
-                </ul>
+<body class="container container-fluid">
+    <div class="row container-fluid">
+    <header class="col blocks">
+        <div class="container">
+            <div class="row">
+                <a href="#" id="home"><img src="../public/img/twitter_logo.png" alt="logo de twitter" id="oiseaulogo" class="logos img-icon"></a>
             </div>
-        </nav>
+            <div class="row">
+                <div class="col">
+                <a href="#" id="home"><img src="../public/img/logo_maison.png" alt="logo de l'Accueil"
+                        class="logos img-icon"></a>
+                </div>
+                    </div>
+            <div class="row">
+                <a href="#" id="explore"><img src="../public/img/hashtag.png" alt="logo hashtag" class="logos img-icon"></a>
+            </div>
+        </div>
     </header>
-    <main class="main-container-home">

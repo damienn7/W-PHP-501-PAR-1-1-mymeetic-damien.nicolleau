@@ -1,8 +1,8 @@
 <?php
 
 return array(
-    "db_user" => "damien",
-    "db_pass" => "PETITnuage-26",
-    "db_host" => "localhost",
-    "db_name" => "mymeetic"
+    "db_user" => "wac209_user",
+    "db_pass" => "wac209",
+    "db_host" => "www.webacademie-project.tech",
+    "db_name" => "twitter_academy_db"
 );
